@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shortcut Hub – Keyboard Shortcut Reference</title>
+<meta name="description" content="A comprehensive keyboard shortcut reference hub for Windows, macOS, VS Code, Chrome, and more." />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:0 0% 100%;--fg:240 10% 10%;--card:0 0% 97%;--card-fg:240 10% 10%;
+  --primary:187 72% 48%;--primary-fg:0 0% 100%;--muted:220 14% 96%;--muted-fg:220 9% 46%;
+  --border:220 13% 90%;--surface:220 14% 96%;--surface-fg:240 10% 10%;
+  --kbd:220 14% 92%;--kbd-fg:240 10% 10%;--kbd-border:220 13% 85%;
+  --star:45 93% 58%;--destructive:0 84% 60%;
+  --sidebar-bg:0 0% 98%;--sidebar-fg:240 5.3% 26.1%;--sidebar-accent:220 14% 96%;--sidebar-accent-fg:240 5.9% 10%;
+}
+.dark{
+  --bg:240 10% 6%;--fg:0 0% 95%;--card:240 8% 10%;--card-fg:0 0% 95%;
+  --primary:187 72% 48%;--primary-fg:240 10% 6%;--muted:240 6% 14%;--muted-fg:240 5% 55%;
+  --border:240 6% 18%;--surface:240 6% 12%;--surface-fg:0 0% 90%;
+  --kbd:240 8% 18%;--kbd-fg:0 0% 95%;--kbd-border:240 6% 25%;
+  --star:45 93% 58%;--destructive:0 62% 50%;
+  --sidebar-bg:240 10% 5%;--sidebar-fg:240 5% 65%;--sidebar-accent:240 6% 12%;--sidebar-accent-fg:0 0% 90%;
+}
+body{font-family:'Inter',system-ui,sans-serif;background:hsl(var(--bg));color:hsl(var(--fg));-webkit-font-smoothing:antialiased;overflow:hidden;height:100vh}
+.mono{font-family:'JetBrains Mono',monospace}
+.flex{display:flex}.flex-col{flex-direction:column}.flex-1{flex:1}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}
+.grid{display:grid}.grid-cols-2{grid-template-columns:repeat(2,1fr)}.grid-cols-3{grid-template-columns:repeat(3,1fr)}
+.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.relative{position:relative}.absolute{position:absolute}.fixed{position:fixed}
+.w-full{width:100%}.h-full{height:100%}.h-screen{height:100vh}
+.text-xs{font-size:.75rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.text-2xl{font-size:1.5rem}
+.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-bold{font-weight:700}
+.rounded-md{border-radius:.375rem}.rounded-lg{border-radius:.5rem}.rounded-xl{border-radius:.75rem}
+.border{border:1px solid hsl(var(--border))}.border-b{border-bottom:1px solid hsl(var(--border))}
+.border-r{border-right:1px solid hsl(var(--border))}
+.px-2{padding-left:.5rem;padding-right:.5rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}
+.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}
+.p-3{padding:.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}
+.mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mt-1{margin-top:.25rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}
+.ml-auto{margin-left:auto}
+.space-y-2>*+*{margin-top:.5rem}.space-y-6>*+*{margin-top:1.5rem}
+.tracking-wider{letter-spacing:.05em}.uppercase{text-transform:uppercase}.capitalize{text-transform:capitalize}
+.cursor-pointer{cursor:pointer}
+.transition{transition:all .2s ease}
+.bg-bg{background:hsl(var(--bg))}.bg-card{background:hsl(var(--card))}.bg-surface{background:hsl(var(--surface))}
+.bg-sidebar{background:hsl(var(--sidebar-bg))}.bg-kbd{background:hsl(var(--kbd))}
+.bg-primary{background:hsl(var(--primary))}.bg-primary-10{background:hsl(var(--primary)/.1)}.bg-primary-5{background:hsl(var(--primary)/.05)}
+.text-fg{color:hsl(var(--fg))}.text-muted{color:hsl(var(--muted-fg))}.text-primary{color:hsl(var(--primary))}
+.text-primary-fg{color:hsl(var(--primary-fg))}.text-kbd{color:hsl(var(--kbd-fg))}.text-star{color:hsl(var(--star))}
+.text-sidebar{color:hsl(var(--sidebar-fg))}.text-destructive{color:hsl(var(--destructive))}
+.border-color{border-color:hsl(var(--border))}.border-kbd{border-color:hsl(var(--kbd-border))}
+.border-primary-40{border-color:hsl(var(--primary)/.4)}.border-primary-20{border-color:hsl(var(--primary)/.2)}
+/* Scrollbar */
+.scroll-thin::-webkit-scrollbar{width:4px}
+.scroll-thin::-webkit-scrollbar-track{background:transparent}
+.scroll-thin::-webkit-scrollbar-thumb{background:hsl(var(--border));border-radius:999px}
+/* Layout */
+#app{display:flex;height:100vh;overflow:hidden}
+#sidebar{width:256px;border-right:1px solid hsl(var(--border));background:hsl(var(--sidebar-bg));display:flex;flex-direction:column;height:100%;position:relative;z-index:50;transition:transform .3s ease}
+#sidebar-overlay{display:none;position:fixed;inset:0;background:hsl(var(--bg)/.6);backdrop-filter:blur(4px);z-index:40}
+#main{flex:1;display:flex;flex-direction:column;overflow:hidden}
+#topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid hsl(var(--border));background:hsl(var(--bg)/.8);backdrop-filter:blur(12px);padding:.75rem 1.5rem}
+#content{flex:1;overflow-y:auto;padding:1.5rem}
+.max-w-6xl{max-width:72rem;margin:0 auto}
+/* Cards grid */
+.cards-grid{display:grid;gap:.75rem;grid-template-columns:repeat(3,1fr)}
+@media(max-width:1024px){.cards-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.cards-grid{grid-template-columns:1fr}#sidebar{position:fixed;top:0;left:0;transform:translateX(-100%)}#sidebar.open{transform:translateX(0)}#sidebar-overlay.open{display:block}.hide-mobile{display:none!important}.show-mobile{display:flex!important}#topbar{padding:.75rem 1rem}}
+.shortcut-card{border-radius:.75rem;border:1px solid hsl(var(--border));background:hsl(var(--card));padding:1rem;transition:all .2s}
+.shortcut-card:hover{border-color:hsl(var(--primary)/.4);box-shadow:0 10px 25px -5px hsl(var(--primary)/.05)}
+/* Buttons */
+.btn{border:none;background:none;cursor:pointer;font-family:inherit;transition:all .2s}
+.btn-toggle{border-radius:.5rem;padding:.375rem .75rem;font-size:.75rem;font-weight:500}
+.btn-toggle.active{background:hsl(var(--primary));color:hsl(var(--primary-fg));box-shadow:0 1px 3px hsl(var(--primary)/.2)}
+.btn-toggle:not(.active){color:hsl(var(--muted-fg))}
+.btn-toggle:not(.active):hover{color:hsl(var(--fg))}
+/* Sidebar nav */
+.nav-btn{display:flex;align-items:center;gap:.75rem;width:100%;border-radius:.5rem;padding:.625rem .75rem;font-size:.875rem;font-weight:500;border:none;background:none;cursor:pointer;color:hsl(var(--sidebar-fg));transition:all .2s;text-align:left;font-family:inherit}
+.nav-btn:hover{background:hsl(var(--sidebar-accent));color:hsl(var(--sidebar-accent-fg))}
+.nav-btn.active{background:hsl(var(--primary)/.1);color:hsl(var(--primary))}
+/* Search */
+#search{width:100%;max-width:28rem;border-radius:.5rem;border:1px solid hsl(var(--border));background:hsl(var(--surface));padding:.5rem .75rem .5rem 2.25rem;font-size:.875rem;color:hsl(var(--fg));font-family:inherit;outline:none;transition:border-color .2s}
+#search::placeholder{color:hsl(var(--muted-fg))}
+#search:focus{border-color:hsl(var(--primary))}
+/* kbd */
+kbd{display:inline-flex;align-items:center;border-radius:.375rem;border:1px solid hsl(var(--kbd-border));background:hsl(var(--kbd));padding:.25rem .5rem;font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:600;color:hsl(var(--kbd-fg));box-shadow:0 1px 2px hsl(0 0% 0%/.05)}
+/* Daily shortcut */
+.daily{border-radius:.75rem;border:1px solid hsl(var(--primary)/.2);background:linear-gradient(to right,hsl(var(--primary)/.05),hsl(var(--primary)/.1),hsl(var(--primary)/.05));padding:1.25rem;position:relative;overflow:hidden}
+.daily::after{content:'';position:absolute;top:-2rem;right:-2rem;width:6rem;height:6rem;border-radius:50%;background:hsl(var(--primary)/.1);filter:blur(2rem)}
+/* Keyboard */
+.key-btn{display:flex;align-items:center;justify-content:center;border-radius:.375rem;border:1px solid hsl(var(--kbd-border));background:hsl(var(--kbd));font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:500;color:hsl(var(--kbd-fg));height:2.25rem;min-width:2.25rem;padding:0 .375rem;cursor:pointer;transition:all .15s}
+.key-btn:hover{border-color:hsl(var(--primary)/.4);background:hsl(var(--primary)/.05)}
+.key-btn.selected{border-color:hsl(var(--primary));background:hsl(var(--primary)/.2);color:hsl(var(--primary));box-shadow:0 0 8px hsl(var(--primary)/.2)}
+/* Icons (inline SVG helpers) */
+.icon{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.icon-sm{width:16px;height:16px}
+.icon-xs{width:14px;height:14px}
+.icon-12{width:12px;height:12px}
+/* Animations */
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.animate-in{animation:fadeIn .3s ease-out}
+/* Divider */
+.divider{border-top:1px solid hsl(var(--border));margin:1rem 0}
+/* Category badge */
+.cat-badge{display:inline-block;border-radius:.375rem;background:hsl(var(--primary)/.1);padding:.125rem .5rem;font-size:.75rem;font-weight:500;color:hsl(var(--primary))}
+.flex-wrap{flex-wrap:wrap}
+.show-mobile{display:none!important}
+.text-center{text-align:center}
+input[type="text"]{font-family:inherit}
+/* Custom form */
+.custom-input{width:100%;border-radius:.375rem;border:1px solid hsl(var(--border));background:hsl(var(--bg));padding:.375rem .75rem;font-size:.875rem;color:hsl(var(--fg));font-family:inherit;outline:none}
+.custom-input::placeholder{color:hsl(var(--muted-fg))}
+.custom-input:focus{border-color:hsl(var(--primary))}
+.custom-input.mono{font-family:'JetBrains Mono',monospace}
+.dark .icon,
+.dark .icon-sm,
+.dark .icon-xs,
+.dark .icon-12 {
+  stroke:hsl(var(--muted-fg));
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+  <aside id="sidebar">
+    <div class="flex items-center justify-between px-5 py-5">
+      <div class="flex items-center gap-2">
+        <svg class="icon text-primary" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10"/></svg>
+        <span class="text-lg font-bold text-fg">Shortcut Hub</span>
+      </div>
+      <button class="btn text-muted show-mobile" onclick="closeSidebar()">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav id="sidebar-nav" class="flex-1 overflow-y-auto px-3 scroll-thin"></nav>
+  </aside>
+  <div id="main">
+    <header id="topbar">
+      <button class="btn text-muted show-mobile" onclick="openSidebar()">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <div class="relative flex-1" style="max-width:28rem">
+        <svg class="icon-sm absolute" style="left:.75rem;top:50%;transform:translateY(-50%);color:hsl(var(--muted-fg))" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="search" placeholder="Search shortcuts..." oninput="onSearch(this.value)"/>
+      </div>
+      <div class="flex items-center gap-2 ml-auto">
+        <div class="flex items-center rounded-lg border p-0.5 hide-mobile" style="padding:2px;border-color:hsl(var(--border));background:hsl(var(--surface))">
+          <button id="btn-win" class="btn btn-toggle active" onclick="setPlatform('windows')">Windows</button>
+          <button id="btn-mac" class="btn btn-toggle" onclick="setPlatform('mac')">macOS</button>
+        </div>
+        <button id="btn-theme" class="btn rounded-lg border" style="padding:.5rem;border-color:hsl(var(--border));background:hsl(var(--surface));color:hsl(var(--fg))" onclick="toggleTheme()">
+          <svg id="icon-sun" class="icon-sm" viewBox="0 0 24 24" style="display:none"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg id="icon-moon" class="icon-sm" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </header>
+    <main id="content" class="scroll-thin">
+      <div class="max-w-6xl space-y-6">
+        <div id="header-section"></div>
+        <div id="daily-section"></div>
+        <div id="mobile-platform" class="show-mobile" style="display:none!important"></div>
+        <div id="category-section"></div>
+        <div id="cards-section"></div>
+        <div id="keyboard-section"></div>
+        <div id="custom-section"></div>
+      </div>
+    </main>
+  </div>
+</div>
+<script>
+// ============ DATA ============
+const APP_LIST = [
+  {id:"all",label:"All Shortcuts",icon:"layers"}, 
+  {id:"windows",label:"Windows",icon:"monitor"},{id:"macos",label:"macOS",icon:"monitor"},
+  {id:"vscode",label:"VS Code",icon:"code"},{id:"chrome",label:"Chrome",icon:"globe"},
+  {id:"word",label:"MS Word",icon:"file"},{id:"excel",label:"Excel",icon:"table"},
+  {id:"git",label:"Git",icon:"git"},{id:"terminal",label:"Terminal",icon:"terminal"},
+  {id:"figma",label:"Figma",icon:"layers"},{id:"photoshop",label:"Photoshop",icon:"image"}
+];
+const ICONS = {
+  monitor:'<svg class="icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
+  code:'<svg class="icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+  globe:'<svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
+  file:'<svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
+  table:'<svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>',
+  git:'<svg class="icon" viewBox="0 0 24 24"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>',
+  terminal:'<svg class="icon" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>',
+  layers:'<svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>',
+  image:'<svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>',
+  star:'<svg class="icon-sm" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
+  sparkles:'<svg class="icon-sm" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3zM5 19l.5 1.5L7 21l-1.5.5L5 23l-.5-1.5L3 21l1.5-.5L5 19z"/></svg>',
+  copy:'<svg class="icon-12" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
+  check:'<svg class="icon-12" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>',
+  plus:'<svg class="icon-12" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>',
+  trash:'<svg class="icon-xs" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>',
+  keyboard:'<svg class="icon-sm" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10"/></svg>',
+};
+let _id=0;
+function s(app,cat,desc,win,mac){return{id:'s'+(_id++),app,category:cat,description:desc,windowsKeys:win,macKeys:mac}}
+const shortcuts = [
+
+/* ================= WINDOWS ================= */
+
+s("windows","System","Show desktop",["Win","D"],["Fn","F11"]),
+s("windows","System","Lock screen",["Win","L"],["Ctrl","Cmd","Q"]),
+s("windows","System","Switch apps",["Alt","Tab"],["Cmd","Tab"]),
+s("windows","System","Task Manager",["Ctrl","Shift","Esc"],["Cmd","Opt","Esc"]),
+s("windows","System","Open Settings",["Win","I"],["Cmd",","]),
+s("windows","System","Screenshot",["Win","Shift","S"],["Cmd","Shift","4"]),
+s("windows","System","Open Run dialog",["Win","R"],["Cmd","Space"]),
+s("windows","System","Open File Explorer",["Win","E"],["Cmd","Shift","F"]),
+s("windows","System","Open Action Center",["Win","A"],["Ctrl","Cmd","A"]),
+s("windows","System","Open Quick Link menu",["Win","X"],["Cmd","Opt","X"]),
+s("windows","System","Clipboard history",["Win","V"],["Cmd","Shift","V"]),
+
+s("windows","Navigation","Switch virtual desktop",["Win","Ctrl","←/→"],["Ctrl","←/→"]),
+s("windows","Navigation","Create virtual desktop",["Win","Ctrl","D"],["Ctrl","↑"]),
+s("windows","Navigation","Snap window left",["Win","←"],["Ctrl","Opt","←"]),
+s("windows","Navigation","Snap window right",["Win","→"],["Ctrl","Opt","→"]),
+s("windows","Navigation","Minimize all windows",["Win","M"],["Cmd","Opt","M"]),
+s("windows","Navigation","Task View",["Win","Tab"],["Ctrl","↑"]),
+
+s("windows","Editing","Copy",["Ctrl","C"],["Cmd","C"]),
+s("windows","Editing","Paste",["Ctrl","V"],["Cmd","V"]),
+s("windows","Editing","Cut",["Ctrl","X"],["Cmd","X"]),
+s("windows","Editing","Undo",["Ctrl","Z"],["Cmd","Z"]),
+s("windows","Editing","Redo",["Ctrl","Y"],["Cmd","Shift","Z"]),
+s("windows","Editing","Select all",["Ctrl","A"],["Cmd","A"]),
+s("windows","Editing","Rename selected item",["F2"],["Enter"]),
+
+s("windows","File","Open file",["Ctrl","O"],["Cmd","O"]),
+s("windows","File","Save file",["Ctrl","S"],["Cmd","S"]),
+s("windows","File","Print",["Ctrl","P"],["Cmd","P"]),
+s("windows","File","New window",["Ctrl","N"],["Cmd","N"]),
+s("windows","File","Close window",["Alt","F4"],["Cmd","W"]),
+
+s("windows","System","Open Search",["Win","S"],["Cmd","Space"]),
+s("windows","System","Full screenshot",["Win","PrtScn"],["Cmd","Shift","3"]),
+s("windows","System","Full screen",["F11"],["Ctrl","Cmd","F"]),
+s("windows","General","Refresh",["F5"],["Cmd","R"]),
+
+/* ================= MACOS ================= */
+
+s("macos","System","Spotlight search",["Win","S"],["Cmd","Space"]),
+s("macos","System","Force quit apps",["Ctrl","Alt","Del"],["Cmd","Opt","Esc"]),
+s("macos","System","Mission Control",["Win","Tab"],["Ctrl","↑"]),
+s("macos","System","Show desktop",["Win","D"],["Fn","F11"]),
+s("macos","System","Lock screen",["Win","L"],["Ctrl","Cmd","Q"]),
+s("macos","System","Screenshot full",["PrtSc"],["Cmd","Shift","3"]),
+s("macos","System","Screenshot window",["Alt","PrtSc"],["Cmd","Shift","4","Space"]),
+
+s("macos","Navigation","Switch apps",["Alt","Tab"],["Cmd","Tab"]),
+s("macos","Navigation","Switch spaces",["Ctrl","←/→"],["Ctrl","←/→"]),
+s("macos","System","Hide other windows",[],["Cmd","Opt","H"]),
+s("macos","Editing","Emoji picker",["Win","."],["Ctrl","Cmd","Space"]),
+s("macos","Editing","Duplicate file",["Ctrl","D"],["Cmd","D"]),
+s("macos","Editing","Hide app",["Alt","H"],["Cmd","H"]),
+
+s("macos","System","Minimize window",["Win","Down"],["Cmd","M"]),
+s("macos","File","Move to Trash",["Delete"],["Cmd","Delete"]),
+s("macos","File","Empty Trash",["Shift","Delete"],["Cmd","Shift","Delete"]),
+s("macos","File","Quick Look",["Space"],["Space"]),
+
+/* ================= VS CODE ================= */
+
+s("vscode","Navigation","Command Palette",["Ctrl","Shift","P"],["Cmd","Shift","P"]),
+s("vscode","Navigation","Quick Open",["Ctrl","P"],["Cmd","P"]),
+s("vscode","Navigation","Go to file explorer",["Ctrl","Shift","E"],["Cmd","Shift","E"]),
+s("vscode","Navigation","Open settings",["Ctrl",","],["Cmd",","]),
+
+s("vscode","Editing","Multi cursor",["Ctrl","Alt","↑/↓"],["Cmd","Opt","↑/↓"]),
+s("vscode","Editing","Duplicate line up",["Shift","Alt","↑"],["Shift","Opt","↑"]),
+s("vscode","Editing","Duplicate line down",["Shift","Alt","↓"],["Shift","Opt","↓"]),
+s("vscode","Editing","Select current line",["Ctrl","L"],["Cmd","L"]),
+s("vscode","Editing","Format document",["Shift","Alt","F"],["Shift","Opt","F"]),
+
+s("vscode","View","Toggle sidebar",["Ctrl","B"],["Cmd","B"]),
+s("vscode","View","Zen mode",["Ctrl","K","Z"],["Cmd","K","Z"]),
+s("vscode","View","Full screen",["F11"],["Cmd","Ctrl","F"]),
+
+s("vscode","Developer","Start debugging",["F5"],["F5"]),
+s("vscode","Developer","Toggle breakpoint",["F9"],["F9"]),
+
+s("vscode","Editing","Delete line",["Ctrl","Shift","K"],["Cmd","Shift","K"]),
+s("vscode","Editing","Move line up",["Alt","↑"],["Opt","↑"]),
+s("vscode","Editing","Move line down",["Alt","↓"],["Opt","↓"]),
+s("vscode","Navigation","Go to line",["Ctrl","G"],["Cmd","G"]),
+s("vscode","Navigation","Go to definition",["F12"],["F12"]),
+s("vscode","Developer","Toggle terminal",["Ctrl","`"],["Ctrl","`"]),
+
+/* ================= CHROME ================= */
+
+s("chrome","Navigation","New tab",["Ctrl","T"],["Cmd","T"]),
+s("chrome","Navigation","Close tab",["Ctrl","W"],["Cmd","W"]),
+s("chrome","Navigation","Reopen tab",["Ctrl","Shift","T"],["Cmd","Shift","T"]),
+s("chrome","Navigation","Next tab",["Ctrl","Tab"],["Cmd","Opt","→"]),
+s("chrome","Navigation","Switch to tab 1-8",["Ctrl","1-8"],["Cmd","1-8"]),
+s("chrome","Navigation","Last tab",["Ctrl","9"],["Cmd","9"]),
+
+s("chrome","Editing","Find",["Ctrl","F"],["Cmd","F"]),
+s("chrome","Developer","Open DevTools",["F12"],["Cmd","Opt","I"]),
+
+s("chrome","Navigation","Previous tab",["Ctrl","Shift","Tab"],["Cmd","Opt","←"]),
+s("chrome","Navigation","New window",["Ctrl","N"],["Cmd","N"]),
+s("chrome","Navigation","Incognito window",["Ctrl","Shift","N"],["Cmd","Shift","N"]),
+s("chrome","General","Reload page",["Ctrl","R"],["Cmd","R"]),
+s("chrome","Developer","Hard reload",["Ctrl","Shift","R"],["Cmd","Shift","R"]),
+
+/* ================= WORD ================= */
+
+s("word","Formatting","Bold",["Ctrl","B"],["Cmd","B"]),
+s("word","Formatting","Italic",["Ctrl","I"],["Cmd","I"]),
+s("word","Formatting","Increase indent",["Ctrl","M"],["Cmd","M"]),
+s("word","Editing","Insert hyperlink",["Ctrl","K"],["Cmd","K"]),
+s("word","Editing","Insert page break",["Ctrl","Enter"],["Cmd","Enter"]),
+
+s("word","Formatting","Underline",["Ctrl","U"],["Cmd","U"]),
+s("word","Formatting","Center align",["Ctrl","E"],["Cmd","E"]),
+s("word","Formatting","Right align",["Ctrl","R"],["Cmd","R"]),
+s("word","Editing","Find",["Ctrl","F"],["Cmd","F"]),
+s("word","Editing","Replace",["Ctrl","H"],["Cmd","H"]),
+
+/* ================= EXCEL ================= */
+
+s("excel","Navigation","Select row",["Shift","Space"],["Shift","Space"]),
+s("excel","Navigation","Select column",["Ctrl","Space"],["Ctrl","Space"]),
+s("excel","Editing","Insert date",["Ctrl",";"],["Ctrl",";"]),
+s("excel","Editing","Insert time",["Ctrl","Shift",";"],["Ctrl","Shift",";"]),
+s("excel","Formatting","Bold",["Ctrl","B"],["Cmd","B"]),
+
+s("excel","Navigation","Go to A1",["Ctrl","Home"],["Ctrl","Home"]),
+s("excel","Navigation","Go to last cell",["Ctrl","End"],["Cmd","End"]),
+s("excel","Editing","AutoSum",["Alt","="],["Cmd","Shift","T"]),
+s("excel","General","Create table",["Ctrl","T"],["Cmd","T"]),
+
+/* ================= GIT ================= */
+
+s("git","Navigation","Status",["git status"],["git status"]),
+s("git","Navigation","Branch -a",["git branch -a"],["git branch -a"]),
+s("git","Editing","Commit",["git commit -m"],["git commit -m"]),
+s("git","System","Push",["git push"],["git push"]),
+s("git","System","Force push",["git push --force"],["git push --force"]),
+
+/* ================= TERMINAL ================= */
+
+s("terminal","Navigation","cd",["cd <dir>"],["cd <dir>"]),
+s("terminal","Navigation","ls",["dir"],["ls -la"]),
+s("terminal","Editing","Clear line",["Ctrl","U"],["Ctrl","U"]),
+s("terminal","Editing","Reverse search",["Ctrl","R"],["Ctrl","R"]),
+s("terminal","System","Exit",["exit"],["exit"]),
+
+/* ================= FIGMA ================= */
+
+s("figma","Editing","Group",["Ctrl","G"],["Cmd","G"]),
+s("figma","Editing","Mask",["Ctrl","Alt","M"],["Cmd","Opt","M"]),
+s("figma","Editing","Flip horizontal",["Shift","H"],["Shift","H"]),
+s("figma","View","Toggle grid",["Ctrl","'"],["Cmd","'"]),
+
+/* ================= PHOTOSHOP ================= */
+
+s("photoshop","Editing","Free transform",["Ctrl","T"],["Cmd","T"]),
+s("photoshop","Editing","Duplicate layer",["Ctrl","J"],["Cmd","J"]),
+s("photoshop","Editing","Undo multiple",["Ctrl","Alt","Z"],["Cmd","Opt","Z"]),
+s("photoshop","View","Toggle guides",["Ctrl",";"],["Cmd",";"])
+
+];
+// ============ STATE ============
+let state = {
+  selectedApp: 'all',
+  platform: 'windows',
+  searchQuery: '',
+  selectedCategory: null,
+  favorites: JSON.parse(localStorage.getItem('shortcut-favorites')||'[]'),
+  showFavorites: false,
+  compareMode: false,
+  darkMode: localStorage.getItem('theme')!=='light',
+  customShortcuts: JSON.parse(localStorage.getItem('custom-shortcuts')||'[]'),
+  keyboardOpen: false,
+  selectedKey: null,
+  customFormOpen: false,
+};
+// ============ HELPERS ============
+function getAppShortcuts(appId){
+  if(appId === "all") return shortcuts;
+  return shortcuts.filter(s=>s.app===appId);
+}
+function getCategories(appId){return[...new Set(getAppShortcuts(appId).map(s=>s.category))]}
+function getDailyShortcut(){const d=new Date(),seed=d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate();return shortcuts[seed%shortcuts.length]}
+function esc(str){const d=document.createElement('div');d.textContent=str;return d.innerHTML}
+// ============ ACTIONS ============
+function setPlatform(p){state.platform=p;render()}
+function onSearch(q){state.searchQuery=q;render()}
+function toggleTheme(){state.darkMode=!state.darkMode;document.documentElement.classList.toggle('dark',state.darkMode);localStorage.setItem('theme',state.darkMode?'dark':'light');updateThemeIcon()}
+function updateThemeIcon(){document.getElementById('icon-sun').style.display=state.darkMode?'block':'none';document.getElementById('icon-moon').style.display=state.darkMode?'none':'block'}
+function selectApp(id){state.selectedApp=id;state.showFavorites=false;state.selectedCategory=null;state.searchQuery='';document.getElementById('search').value='';closeSidebar();render()}
+function selectCategory(cat){state.selectedCategory=cat;render()}
+function toggleFavorite(id){const i=state.favorites.indexOf(id);if(i>-1)state.favorites.splice(i,1);else state.favorites.push(id);localStorage.setItem('shortcut-favorites',JSON.stringify(state.favorites));render()}
+function toggleFavorites(){state.showFavorites=!state.showFavorites;state.selectedCategory=null;closeSidebar();render()}
+function toggleCompare(){state.compareMode=!state.compareMode;closeSidebar();render()}
+function copyShortcut(btn, keys) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(keys)
+      .then(() => {
+        btn.innerHTML = ICONS.check + ' Copied!';
+        setTimeout(() => {
+          btn.innerHTML = ICONS.copy + ' Copy';
+        }, 1500);
+      })
+      .catch(err => {
+        fallbackCopy(btn, keys);
+      });
+  } else {
+    fallbackCopy(btn, keys);
+  }
+}
+
+function fallbackCopy(btn, text) {
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.style.position = "fixed";
+  textarea.style.left = "-9999px";
+  document.body.appendChild(textarea);
+  textarea.focus();
+  textarea.select();
+
+  try {
+    document.execCommand("copy");
+    btn.innerHTML = ICONS.check + ' Copied!';
+  } catch (err) {
+    alert("Copy failed. Please copy manually.");
+  }
+
+  document.body.removeChild(textarea);
+
+  setTimeout(() => {
+    btn.innerHTML = ICONS.copy + ' Copy';
+  }, 1500);
+}
+function openSidebar(){document.getElementById('sidebar').classList.add('open');document.getElementById('sidebar-overlay').classList.add('open')}
+function closeSidebar(){document.getElementById('sidebar').classList.remove('open');document.getElementById('sidebar-overlay').classList.remove('open')}
+function toggleKeyboard(){state.keyboardOpen=!state.keyboardOpen;state.selectedKey=null;render()}
+function selectKey(key){state.selectedKey=state.selectedKey===key?null:key;render()}
+function toggleCustomForm(){state.customFormOpen=!state.customFormOpen;render()}
+function addCustomShortcut(e){
+  e.preventDefault();const f=e.target;
+  const desc=f.desc.value.trim(),keys=f.keys.value.trim(),cat=f.cat.value.trim()||'Custom';
+  if(!desc||!keys)return;
+  state.customShortcuts.push({id:'c'+Date.now(),description:desc,keys:keys.split('+').map(k=>k.trim()).filter(Boolean),category:cat});
+  localStorage.setItem('custom-shortcuts',JSON.stringify(state.customShortcuts));
+  state.customFormOpen=false;render()
+}
+function removeCustom(id){state.customShortcuts=state.customShortcuts.filter(c=>c.id!==id);localStorage.setItem('custom-shortcuts',JSON.stringify(state.customShortcuts));render()}
+// ============ RENDER ============
+function render(){
+  // Sidebar
+  let navHtml='<p style="margin-bottom:.5rem;padding:0 .5rem;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:hsl(var(--muted-fg))">Applications</p>';
+  APP_LIST.forEach(app=>{
+    const active=state.selectedApp===app.id&&!state.showFavorites;
+    navHtml+=`<button class="nav-btn ${active?'active':''}" onclick="selectApp('${app.id}')">${ICONS[app.icon]}${app.label}</button>`;
+  });
+  navHtml+='<div class="divider"></div>';
+  navHtml+=`<button class="nav-btn ${state.showFavorites?'active':''}" onclick="toggleFavorites()">${ICONS.star}My Shortcuts</button>`;
+  navHtml+=`<button class="nav-btn ${state.compareMode?'active':''}" onclick="toggleCompare()">${ICONS.layers}Compare Mode</button>`;
+  document.getElementById('sidebar-nav').innerHTML=navHtml;
+  // Header
+  const appLabel=APP_LIST.find(a=>a.id===state.selectedApp)?.label||'';
+  let filtered=state.showFavorites?shortcuts.filter(s=>state.favorites.includes(s.id)):getAppShortcuts(state.selectedApp);
+  if(state.selectedCategory)filtered=filtered.filter(s=>s.category===state.selectedCategory);
+  if(state.searchQuery.trim()){const q=state.searchQuery.toLowerCase();filtered=filtered.filter(s=>s.description.toLowerCase().includes(q)||s.windowsKeys.join(' ').toLowerCase().includes(q)||s.macKeys.join(' ').toLowerCase().includes(q))}
+  document.getElementById('header-section').innerHTML=`<div><h1 style="font-size:1.5rem;font-weight:700;color:hsl(var(--fg))">${state.showFavorites ? 'My Shortcuts' : (state.selectedApp === 'all' ? 'All Shortcuts' : appLabel + ' Shortcuts')}</h1><p style="font-size:.875rem;color:hsl(var(--fg));margin-top:.25rem">${filtered.length} ${state.showFavorites?'saved':'available'} shortcuts</p></div>`;
+  // Daily
+  if(!state.showFavorites&&!state.searchQuery){
+    const ds=getDailyShortcut();const dk=state.platform==='windows'?ds.windowsKeys:ds.macKeys;
+    document.getElementById('daily-section').innerHTML=`<div class="daily animate-in"><div class="flex items-center gap-2 mb-3">${ICONS.sparkles}<span style="font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:hsl(var(--primary))">Daily Shortcut</span></div><div class="flex flex-wrap items-center gap-2 mb-2">${dk.map((k,i)=>`<span class="flex items-center gap-1"><kbd>${esc(k)}</kbd>${i<dk.length-1?'<span style="color:hsl(var(--muted-fg))">+</span>':''}</span>`).join('')}</div><p style="font-size:.875rem;color:hsl(var(--fg))">${esc(ds.description)}</p><p style="font-size:.75rem;color:hsl(var(--muted-fg));margin-top:.25rem;text-transform:capitalize">${ds.app}</p></div>`;
+  }else{document.getElementById('daily-section').innerHTML=''}
+  // Mobile platform toggle
+  document.getElementById('mobile-platform').innerHTML=`<div class="flex items-center rounded-lg border" style="padding:2px;border-color:hsl(var(--border));background:hsl(var(--surface));width:fit-content"><button class="btn btn-toggle ${state.platform==='windows'?'active':''}" onclick="setPlatform('windows')">Windows</button><button class="btn btn-toggle ${state.platform==='mac'?'active':''}" onclick="setPlatform('mac')">macOS</button></div>`;
+  // Categories
+  if(!state.showFavorites){
+    const cats=getCategories(state.selectedApp);
+    document.getElementById('category-section').innerHTML=`<div class="flex flex-wrap gap-2"><button class="btn btn-toggle ${!state.selectedCategory?'active':''}" onclick="selectCategory(null)">All</button>${cats.map(c=>`<button class="btn btn-toggle ${state.selectedCategory===c?'active':''}" onclick="selectCategory('${c}')">${c}</button>`).join('')}</div>`;
+  }else{document.getElementById('category-section').innerHTML=''}
+  // Cards
+  if(filtered.length>0){
+    document.getElementById('cards-section').innerHTML=`<div class="cards-grid">${filtered.map(sc=>{
+      const keys=state.platform==='windows'?sc.windowsKeys:sc.macKeys;
+      const isFav=state.favorites.includes(sc.id);
+      let keysHtml;
+      if(state.compareMode){
+        keysHtml=`<div style="margin-bottom:.75rem"><div><p style="font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:hsl(var(--muted-fg));margin-bottom:.25rem">Windows</p><div class="flex flex-wrap gap-1">${sc.windowsKeys.map(k=>`<kbd>${esc(k)}</kbd>`).join('')}</div></div><div style="margin-top:.5rem"><p style="font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:hsl(var(--muted-fg));margin-bottom:.25rem">macOS</p><div class="flex flex-wrap gap-1">${sc.macKeys.map(k=>`<kbd>${esc(k)}</kbd>`).join('')}</div></div></div>`;
+      }else{
+        keysHtml=`<div class="flex flex-wrap gap-1" style="margin-bottom:.75rem">${keys.map((k,i)=>`<span class="flex items-center gap-1"><kbd>${esc(k)}</kbd>${i<keys.length-1?'<span style="font-size:.75rem;color:hsl(var(--muted-fg))">+</span>':''}</span>`).join('')}</div>`;
+      }
+      return`<div class="shortcut-card animate-in"><div class="flex items-center justify-between mb-3"><span class="cat-badge">${esc(sc.category)}</span><button class="btn" style="color:${isFav?'hsl(var(--star))':'hsl(var(--muted-fg))'}" onclick="toggleFavorite('${sc.id}')">${isFav?'<svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>':ICONS.star}</button></div>${keysHtml}<p style="font-size:.875rem;color:hsl(var(--fg));margin-bottom:.75rem">${esc(sc.description)}</p><button class="btn flex items-center gap-1 rounded-md border" style="padding:.25rem .625rem;font-size:.75rem;color:hsl(var(--muted-fg));border-color:hsl(var(--border));background:hsl(var(--surface))" onclick="copyShortcut(this,'${esc(keys.join(' + '))}')">${ICONS.copy} Copy</button></div>`
+    }).join('')}</div>`;
+  }else{
+    document.getElementById('cards-section').innerHTML=`<div style="text-align:center;padding:4rem 0"><p style="font-size:.875rem;color:hsl(var(--muted-fg))">No shortcuts found</p><p style="font-size:.75rem;color:hsl(var(--muted-fg));opacity:.6;margin-top:.25rem">Try a different search or category</p></div>`;
+  }
+  // Keyboard visualizer
+  renderKeyboard();
+  // Custom shortcuts
+  renderCustom();
+  // Platform buttons
+  document.getElementById('btn-win').className='btn btn-toggle'+(state.platform==='windows'?' active':'');
+  document.getElementById('btn-mac').className='btn btn-toggle'+(state.platform==='mac'?' active':'');
+}
+function renderKeyboard(){
+  const el=document.getElementById('keyboard-section');
+  if(!state.keyboardOpen){
+    el.innerHTML=`<button class="btn flex items-center gap-2 rounded-xl border" style="padding:.75rem 1rem;font-size:.875rem;color:hsl(var(--muted-fg));border-color:hsl(var(--border));background:hsl(var(--card))" onclick="toggleKeyboard()">${ICONS.keyboard} Open Keyboard Visualizer</button>`;
+    return;
+  }
+  const rows=[
+    ["Esc","F1","F2","F3","F4","F5","F6","F7","F8","F9","F10","F11","F12"],
+    ["\`","1","2","3","4","5","6","7","8","9","0","-","=","Backspace"],
+    ["Tab","Q","W","E","R","T","Y","U","I","O","P","[","]","\\"],
+    ["Caps","A","S","D","F","G","H","J","K","L",";","'","Enter"],
+    ["Shift","Z","X","C","V","B","N","M",",",".","/","Shift"],
+    ["Ctrl","Win","Alt","Space","Alt","Fn","Ctrl"]
+  ];
+  const wide={Backspace:'5rem',Tab:'4rem',Caps:'4.5rem',Enter:'5rem',Shift:'6rem',Esc:'3rem'};
+  const sk=state.selectedKey;
+  const related=sk?shortcuts.filter(sc=>{const k=state.platform==='windows'?sc.windowsKeys:sc.macKeys;return k.some(x=>x.toLowerCase()===sk.toLowerCase())}).slice(0,8):[];
+  let html=`<div class="rounded-xl border animate-in" style="border-color:hsl(var(--border));background:hsl(var(--card));padding:1rem"><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2">${ICONS.keyboard}<span style="font-size:.875rem;font-weight:600;color:hsl(var(--fg))">Keyboard Visualizer</span></div><button class="btn" style="font-size:.75rem;color:hsl(var(--muted-fg))" onclick="toggleKeyboard()">Close</button></div><div style="overflow-x:auto;padding-bottom:.5rem">`;
+  rows.forEach(row=>{
+    html+='<div class="flex gap-1" style="margin-bottom:4px">';
+    row.forEach(key=>{
+      const sel=sk&&sk.toLowerCase()===key.toLowerCase();
+      const w=wide[key]?`width:${wide[key]};`:(key==='Space'?'flex:1;':'');
+      html+=`<button class="key-btn${sel?' selected':''}" style="${w}" onclick="selectKey('${esc(key)}')">${esc(key)}</button>`;
+    });
+    html+='</div>';
+  });
+  html+='</div>';
+  if(sk&&related.length>0){
+    html+=`<div style="margin-top:1rem;border-top:1px solid hsl(var(--border));padding-top:.75rem"><p style="font-size:.75rem;color:hsl(var(--muted-fg));margin-bottom:.5rem">Shortcuts using <kbd>${esc(sk)}</kbd></p><div class="grid grid-cols-2" style="gap:.375rem">${related.map(sc=>{const k=state.platform==='windows'?sc.windowsKeys:sc.macKeys;return`<div class="flex items-center gap-2 rounded-lg" style="background:hsl(var(--surface));padding:.5rem .75rem;font-size:.75rem"><span class="mono" style="color:hsl(var(--primary))">${esc(k.join(' + '))}</span><span style="color:hsl(var(--muted-fg))">—</span><span style="color:hsl(var(--fg))">${esc(sc.description)}</span></div>`}).join('')}</div></div>`;
+  }else if(sk){
+    html+=`<p style="margin-top:.75rem;font-size:.75rem;color:hsl(var(--muted-fg))">No shortcuts found for "${esc(sk)}"</p>`;
+  }
+  html+='</div>';
+  el.innerHTML=html;
+}
+function renderCustom(){
+  const el=document.getElementById('custom-section');
+  let html=`<div class="rounded-xl border animate-in" style="border-color:hsl(var(--border));background:hsl(var(--card));padding:1rem"><div class="flex items-center justify-between mb-3"><span style="font-size:.875rem;font-weight:600;color:hsl(var(--fg))">Custom Shortcuts</span><button class="btn flex items-center gap-1 rounded-md border" style="padding:.25rem .625rem;font-size:.75rem;color:hsl(var(--muted-fg));border-color:hsl(var(--border));background:hsl(var(--surface))" onclick="toggleCustomForm()">${ICONS.plus} Add</button></div>`;
+  if(state.customFormOpen){
+    html+=`<form onsubmit="addCustomShortcut(event)" style="margin-bottom:1rem;padding:.75rem;border-radius:.5rem;background:hsl(var(--surface))"><div class="space-y-2"><input name="desc" class="custom-input" placeholder="Description" required/><input name="keys" class="custom-input mono" placeholder="Keys (e.g. Ctrl + Shift + K)" required/><input name="cat" class="custom-input" placeholder="Category (optional)"/><button type="submit" class="btn" style="border-radius:.375rem;background:hsl(var(--primary));color:hsl(var(--primary-fg));padding:.375rem .75rem;font-size:.75rem;font-weight:500">Save Shortcut</button></div></form>`;
+  }
+  if(state.customShortcuts.length===0&&!state.customFormOpen){
+    html+=`<p style="font-size:.75rem;color:hsl(var(--muted-fg))">No custom shortcuts yet.</p>`;
+  }
+  state.customShortcuts.forEach(cs=>{
+    html+=`<div class="flex items-center justify-between rounded-lg" style="background:hsl(var(--surface));padding:.5rem .75rem;margin-bottom:.375rem"><div class="flex items-center gap-3"><div class="flex gap-1">${cs.keys.map(k=>`<kbd>${esc(k)}</kbd>`).join('')}</div><span style="font-size:.75rem;color:hsl(var(--fg))">${esc(cs.description)}</span></div><button class="btn" style="color:hsl(var(--muted-fg))" onclick="removeCustom('${cs.id}')">${ICONS.trash}</button></div>`;
+  });
+  html+='</div>';
+  el.innerHTML=html;
+}
+// ============ INIT ============
+document.documentElement.classList.toggle('dark',state.darkMode);
+updateThemeIcon();
+render();
+</script>
+</body>
+</html>
